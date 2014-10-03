@@ -1,17 +1,19 @@
 \documentclass{beamer}
 \usepackage{hyperref}
 \usepackage{subfig}  %% Para incluir subgraficos
+\usepackage{graphicx}
 \usepackage{media9} % 
 \usepackage{url}
+\usepackage{ragged2e}  % Allow justification
+\usepackage[margin=20pt,font=small,labelfont=bf,labelsep=period]{caption}
 
 \usepackage[spanish, activeacute]{babel}
 \usepackage[utf8]{inputenc}
-
+\decimalpoint
+%\usepackage{natbib}
 
 %
-\hypersetup{pdfstartview={Fit}, bookmarks=True, pdftitle={SCEC Presentation},
-            pdfauthor={Juan Carlos Vergara-Gallego}, pdfsubject={Presentation},
-            pdfkeywords={Waves, Elasticity, Numerical Methods, High Performance Computing, BEM}}  % Configure hyperref
+\hypersetup{pdfstartview={Fit}, bookmarks=True, pdftitle={SCEC Presentation}, pdfauthor={Juan Carlos Vergara-Gallego}, pdfsubject={Presentation}, pdfkeywords={Waves, Elasticity, Numerical Methods, High Performance Computing, BEM}, pdfpagemode=UseOutlines, bookmarks, bookmarksopen, pdfstartview=FitH, colorlinks,linkcolor=blue, urlcolor=black, citecolor=blue}  % Configure hyperref
 
 %--- New commands ----%
 \newcommand{\footref}[1]{\textsuperscript{\ref{#1}}}
@@ -46,28 +48,143 @@
 	\tableofcontents
 \end{frame}
 %
-
-
-% Introduction about waves in general
+%
 \section{Introduction}
 \begin{frame}
 \frametitle{Introducción}
 %
-Se presenta un resumen del trabajo que se está adelantando en el "Southern California Earthquake Center"
+\justifying
+Se presenta un resumen del proyecto {C}yber{S}hake, de sus objetivos y la foma como están abordando el problema de construir el modelo de Amenaza en el Sur de California.
+
+\url{http://scec.usc.edu/scecpedia/CyberShake}
 %
 \end{frame}
 %
 %
-\begin{frame}\frametitle{References}
-\begin{itemize}
-\item Michael A. Slawinski. Waves and rays in Elastic Continua. Second Edition, 2007.
- 
-\item Wikipedia community. Onda (f\'isica) [on line]. Wikipedia, La enciclopedia libre, 2010 ; 22 November 2010. 
-
-\item George B. Arfken \& Hans. J. Weber. Mathematical Methods for Physicists. Elsevier Academic Press, 6th Edition, San Diego, 2005.
-\end{itemize}
+\begin{frame}[allowframebreaks]
+\frametitle{¿Qué es el CyberShake?}
+%
+\justifying
+{C}yber{S}hake, es un proyecto de investigación del ``Southern California Earthquake Center's" (SCEC), dentro del cual se encuentran desarrollando un modelo computacional a gran escala para incluir determinísticamente el efecto de la fuente y la ruta de propagación de las ondas sísmicas en la amenaza sísmica del Sur de California.
+%
 \end{frame}
+%\transwipe
+%
+\begin{frame}
+\frametitle{¿Qué es el CyberShake?}
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=6cm]{img/CyberShake_2009.PNG}
+	\caption{Mapa de amenaza sísmica del Sur de California calculado con CyberShake. \footnote{\url{http://scec.usc.edu/scecwiki/images/6/61/CandB_2008.PNG}\\}}
+\end{figure} 
+%
+\end{frame}
+%
+%
+\begin{frame}
+\frametitle{¿Qué es el CyberShake?}
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=6cm]{img/CandB_2008.PNG}
+	\caption{Mapa de amenaza sísmica del Sur de California calculado con las ecuaciones de predición del movimiento del suelo (GMPE). \footnote{\url{http://scec.usc.edu/scecwiki/images/6/61/CandB_2008.PNG}\\}}
+\end{figure}
+%
+%
+%\begin{figure}[h]
+%\centering
+%%
+%	\subfloat[Ricker pulse.]{\includegraphics[width=0.4\textwidth]{img/CyberShake_2009.PNG}}\qquad
+%	%
+%	\subfloat[Ricker pulse spectrum.]{\includegraphics[width=0.4\textwidth]{img/CandB_2008.PNG}}
+%	%
+%\caption{Ricker pulse and its spectrum.}
+%
+%\end{figure}
+\end{frame}
+%
+%
+\section{¿Qué se hace actualmente?}
+\begin{frame}[allowframebreaks]\frametitle{Ground Motion Prediction Equations}
+%
+Acá voy a meter un texto que me va a pasar La Morsa.
+%
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=3cm]{img/UCERF2_GMPE_2007.PNG}
+	\caption{Mapa de amenaza sísmica del Sur de California calculado con cautro ecuaciones de predición del movimiento del suelo (GMPE) diferentes. \footnote{\url{http://scec.usc.edu/scecwiki/images/b/bd/UCERF2_GMPE_2007.PNG}\\}}
+\end{figure}
+%
+A pesar de que las cuatro leyes de atenuación son aceptadas en la comunidad científica, es evidente las grandes diferencias entre ellas.
+%
+\end{frame}
+%
+%
+\section{¿Con que información cuentan?}
+\subsection{UCERF 2.0}
+\begin{frame}[allowframebreaks]
+\frametitle{Uniform California Earthquake Rupture Forecast, Version2.0 (UCERF 2.0)}
+%
+\justifying
+El $UCERF2.0$ estima la probabilidad de ocurrencia de sismos con magnitud mayor o igual a $5$ $(M_W \geq 5.0)$ que pueden ocurrir dentro de una ventana de tiempo en California EE.UU.\\
+%
+Cuantro componentes básicos de $UCERF2.0$:
+%
+	\begin{itemize}
+	\justifying
+	%
+		\item Modelo de Falla: Geometría física de las fallas conocidas.
+		%
+		\item Modelo de Deformación: ``Taza de deslizamiento" de cada sección de la falla Con eso se calcula el momento sísmico.
+		%
+		\item ``Earthquake Rate Model": Taza de todos los sismos dentro de una región sobre una magnitud mínima especificada.
+		%
+		\item Modelos de Probabilidad: Determina la probabilidad de ocurrencia de cada evento dentro de una ventana de tiempo.
+	%
+	\end{itemize}
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=1.75cm]{img/Components_UCERF.png}
+	\caption{Componentes básicos del modelo UCERF2.0. \cite[figura 3, página 2057]{gravesetal}}
+\end{figure}
+%
+%
+Con la información suministrada por $UCERF2.0$ se identifican todas las posibles fallas sísmicas $200$ $km$ dentro de la región de estudio. Todas las fallas se usan para generar diferentes escenarios, dentro de los cuales se varía la ubicación del hypocentro y la forma de la ruptura.\\
+%
+En total se generan al rededor de $415.000$ escenarios de ruptura para cada sitio. 
+%
+%
+\end{frame}
+%
+%
+\subsection{Modelos de Velocidad}
+\begin{frame}[allowframebreaks]
+\frametitle{SCEC Community Velocity Model: CVM-S}
+%
+\justifying
+Este modelo es una chimba
+%
+\end{frame}
+%
+%
+\begin{frame}[allowframebreaks]{References}
+\def\newblock{}
+%\bibliographystyle{gji}
+%\bibliography{refSCEC}
+\bibliographystyle{plain}
+\begin{thebibliography}{1}
 
+\bibitem{book:aki} Keiiti Aki \& Paul G. Richards. {Q}uantitative {S}eismology. University Sciencie Books, 2nd Edition, Mill Valley, San Diego, 2002.
+
+\bibitem{gravesetal} Graves, R.; Jordan, T. H.; Callaghan, S.; Deelman, E.; Field, E.; Juve, G.; ... \& Vahi, K. (2011). CyberShake: A physics-based seismic hazard model for southern California. Pure and Applied Geophysics, 168(3-4), 367-381.
+
+\bibitem{wiki:FVM} Finite volume method. (2014, April 22). In Wikipedia, The Free Encyclopedia. Retrieved 00:44, September 25, 2014, from \url{http://en.wikipedia.org/w/index.php?title=Finite_volume_method&oldid=605282055}
+
+\end{thebibliography}
+
+\end{frame}
 
 
 \end{document}
