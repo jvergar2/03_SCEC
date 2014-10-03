@@ -19,8 +19,8 @@
 \newcommand{\footref}[1]{\textsuperscript{\ref{#1}}}
 \newcommand{\pardiff}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\pardiffd}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+%
 %---------------------%
-
 %\usefonttheme[onlymath]{serif}  % Make equations to be in serif fonts
 \usefonttheme{serif}  % Make equations to be in serif fonts
 
@@ -122,21 +122,22 @@ A pesar de que las cuatro leyes de atenuación son aceptadas en la comunidad cie
 %
 %
 \section{¿Con que información cuentan?}
-\subsection{UCERF 2.0}
+\subsection{UCERF $2.0$ y $3.0$}
 \begin{frame}[allowframebreaks]
-\frametitle{Uniform California Earthquake Rupture Forecast, Version2.0 (UCERF 2.0)}
+\frametitle{Uniform California Earthquake Rupture Forecast, Version $2.0$ y $3.0$ (UCERF $2.0$ y $3.0$)}
 %
 \justifying
-El $UCERF2.0$ estima la probabilidad de ocurrencia de sismos con magnitud mayor o igual a $5$ $(M_W \geq 5.0)$ que pueden ocurrir dentro de una ventana de tiempo en California EE.UU.\\
 %
-Cuantro componentes básicos de $UCERF2.0$:
+El $UCERF3.0$ estima la probabilidad de ocurrencia de sismos, para una magnitud específica y localización, que pueden ocurrir dentro de una ventana de tiempo en California EE.UU. La versión $3.0$ es una mejora de la versión $2.0$, dando la posibilidad de la ruptura simultanea de varias fallas y mejorando la sobre-estimación que daba $UCERF2.0$ para magnitudes entre $6.5$ y $7.0$.\\
+%
+Cuantro componentes básicos de $UCERF3.0$:
 %
 	\begin{itemize}
 	\justifying
 	%
 		\item Modelo de Falla: Geometría física de las fallas conocidas.
 		%
-		\item Modelo de Deformación: ``Taza de deslizamiento" de cada sección de la falla Con eso se calcula el momento sísmico.
+		\item Modelo de Deformación: ``Taza de deslizamiento" de cada sección de la falla. Con esto se calcula el momento sísmico.
 		%
 		\item ``Earthquake Rate Model": Taza de todos los sismos dentro de una región sobre una magnitud mínima especificada.
 		%
@@ -147,7 +148,7 @@ Cuantro componentes básicos de $UCERF2.0$:
 \begin{figure}[h]
 	\centering
 	\includegraphics[height=1.75cm]{img/Components_UCERF.png}
-	\caption{Componentes básicos del modelo UCERF2.0. \cite[figura 3, página 2057]{gravesetal}}
+	\caption{Componentes básicos del modelo UCERF3.0. \cite[figura 2, página 7]{ucerf3}}
 \end{figure}
 %
 %
@@ -156,15 +157,37 @@ Con la información suministrada por $UCERF2.0$ se identifican todas las posible
 En total se generan al rededor de $415.000$ escenarios de ruptura para cada sitio. 
 %
 %
+%\end{frame}
+%%
+%%
+%\begin{frame}[allowframebreaks]
+%\frametitle{Uniform California Earthquake Rupture Forecast, Version $2.0$ y $3.0$ (UCERF $2.0$ y $3.0$)}
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=6cm]{img/UCERF3_Map.png}
+	\caption{Mapa $3D$ de California, mostrando las $2606$ fallas mapeadas en $UCERF3.0$ \cite[figura 1, página 5]{ucerf3}}
+\end{figure}
+%
 \end{frame}
 %
 %
 \subsection{Modelos de Velocidad}
 \begin{frame}[allowframebreaks]
-\frametitle{SCEC Community Velocity Model: CVM-S}
+\frametitle{SCEC Community Velocity Model: CVM-S.}
 %
 \justifying
-Este modelo es una chimba
+%
+El modelo de velocidad comunitario de California (CVM-S \footnote{Actualmente se encuentra disponible en linea la versión $4.0$ de dicho modelo. \url{http://www.data.scec.org/research-tools/3d-velocity.html}, \url{http://scec.usc.edu/scecpedia/CVM-S}, último acceso $03$ de Octubre de $2014$.}, por sus siglas en ingles), tiene como propósito servir como modelo de referencia en varias áreas de investigación que dependen de las estrucutras, propiedades de los materiales tales como la velocidad de propagación de las ondas sísmicas, en profundidad para llevar acabo diferentes análisis. Las velocidades de mayor profundidad se construye con base reglas que relacionan la profundidad y la edad de los depósitos sedimentarios con las velocidades de las ondas sísmicas. Las velocidades de propagación en los depósitos menos profundos son tomadas de las medidas de los estudios geotécnicos. Las velocidades de propagación en roca son tomados de estudios tomográficos.\\
+%
+El modelo de velocidad CVM-S es de libre acceso, un usuario puede obtener los códigos escritos en Fortran, compilarlos y ejecutarlos en una máquina personal. El código se alimenta con un archivo de texto que contiene la latitud, longitud y profundidad de puntos donde se quiere conocer $V_p$, $V_s$ y la densidad.
+%
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=6cm]{img/CVM-S4.png}
+	\caption{Secciones transversales de California mostrando la variación en profundidad de la velocidad. \footnote{\url{http://scec.usc.edu/scecwiki/images/a/a7/CVM-S4.png}}}
+\end{figure}
 %
 \end{frame}
 %
@@ -179,6 +202,10 @@ Este modelo es una chimba
 \bibitem{book:aki} Keiiti Aki \& Paul G. Richards. {Q}uantitative {S}eismology. University Sciencie Books, 2nd Edition, Mill Valley, San Diego, 2002.
 
 \bibitem{gravesetal} Graves, R.; Jordan, T. H.; Callaghan, S.; Deelman, E.; Field, E.; Juve, G.; ... \& Vahi, K. (2011). CyberShake: A physics-based seismic hazard model for southern California. Pure and Applied Geophysics, 168(3-4), 367-381.
+
+\bibitem{ucerf2} Field, E. H., Dawson, T. E., Felzer, K. R., Frankel, A. D., Gupta, V., Jordan, T. H., ... \& Wills, C. J. (2009). Uniform California earthquake rupture forecast, version 2 (UCERF 2). Bulletin of the Seismological Society of America, 99(4), 2053-2107.
+
+\bibitem{ucerf3} Field, E.H., Biasi, G.P., Bird, P., Dawson, T.E., Felzer, K.R., Jackson, D.D., Johnson, K.M., Jordan, T.H., Madden, C., Michael, A.J., Milner, K.R., Page, M.T., Parsons, T., Powers, P.M., Shaw, B.E., Thatcher, W.R., Weldon, R.J., II, and Zeng, Y., 2013, Uniform California earthquake rupture forecast, version 3 (UCERF3)—The time-independent model: U.S. Geological Survey Open-File Report 2013–1165, 97 p., California Geological Survey Special Report 228, and Southern California Earthquake Center Publication 1792, \url{http://pubs.usgs.gov/of/2013/1165/}.
 
 \bibitem{wiki:FVM} Finite volume method. (2014, April 22). In Wikipedia, The Free Encyclopedia. Retrieved 00:44, September 25, 2014, from \url{http://en.wikipedia.org/w/index.php?title=Finite_volume_method&oldid=605282055}
 
