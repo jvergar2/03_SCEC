@@ -74,8 +74,8 @@ Se presenta un resumen del proyecto {C}yber{S}hake, de sus objetivos y la foma c
 \frametitle{¿Qué es el CyberShake?}
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=6cm]{img/CyberShake_2009.PNG}
-	\caption{Mapa de amenaza sísmica del Sur de California calculado con CyberShake. \footnote{\url{http://scec.usc.edu/scecwiki/images/6/61/CandB_2008.PNG}\\}}
+	\includegraphics[height=6cm]{img/CyberShake_2009.pdf}
+	\caption{Mapa de amenaza sísmica del Sur de California calculado con CyberShake. \footnote{\tiny \url{http://scec.usc.edu/scecwiki/images/6/61/CandB_2008.PNG}\\}}
 \end{figure} 
 %
 \end{frame}
@@ -86,8 +86,8 @@ Se presenta un resumen del proyecto {C}yber{S}hake, de sus objetivos y la foma c
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=6cm]{img/CandB_2008.PNG}
-	\caption{Mapa de amenaza sísmica del Sur de California calculado con las ecuaciones de predición del movimiento del suelo (GMPE). \footnote{\url{http://scec.usc.edu/scecwiki/images/6/61/CandB_2008.PNG}\\}}
+	\includegraphics[height=6cm]{img/CandB_2008.pdf}
+	\caption{Mapa de amenaza sísmica del Sur de California calculado con las ecuaciones de predición del movimiento del suelo (GMPE). \footnote{\tiny \url{http://scec.usc.edu/scecwiki/images/6/61/CandB_2008.PNG}\\}}
 \end{figure}
 %
 %
@@ -107,16 +107,20 @@ Se presenta un resumen del proyecto {C}yber{S}hake, de sus objetivos y la foma c
 \section{¿Qué se hace actualmente?}
 \begin{frame}[allowframebreaks]\frametitle{Ground Motion Prediction Equations}
 %
-Acá voy a meter un texto que me va a pasar La Morsa.
+\justifying
+Las Ecuaciones de Predicción del Movimiento Sísmico del Suelo (GMPEs), especifican la probabilidad de excedencia del movimiento del suelo en un sitio particular para una fuente específica representada por un escenario de ruptura específico.\\
 %
+Las GMPEs entregan $S_a \left( T \right)$ para el $5\%$ de amortiguamiento.
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=3cm]{img/UCERF2_GMPE_2007.PNG}
-	\caption{Mapa de amenaza sísmica del Sur de California calculado con cautro ecuaciones de predición del movimiento del suelo (GMPE) diferentes. \footnote{\url{http://scec.usc.edu/scecwiki/images/b/bd/UCERF2_GMPE_2007.PNG}\\}}
+	\includegraphics[height=3cm]{img/UCERF2_GMPE_2007.pdf}
+	\caption{Mapa de amenaza sísmica del Sur de California calculado con cautro ecuaciones de predición del movimiento del suelo (GMPE) diferentes. \footnote{ \tiny\url{http://scec.usc.edu/scecwiki/images/b/bd/UCERF2_GMPE_2007.PNG}\\}}
 \end{figure}
 %
-A pesar de que las cuatro leyes de atenuación son aceptadas en la comunidad científica, es evidente las grandes diferencias entre ellas.
+\justifying
+A pesar de que las cuatro leyes de atenuación son aceptadas en la comunidad científica, es evidente las grandes diferencias entre ellas.\\
+%
 %
 \end{frame}
 %
@@ -147,11 +151,12 @@ Cuantro componentes básicos de $UCERF3.0$:
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=1.75cm]{img/Components_UCERF.png}
+	\includegraphics[height=1.75cm]{img/Components_UCERF.pdf}
 	\caption{Componentes básicos del modelo UCERF3.0. \cite[figura 2, página 7]{ucerf3}}
 \end{figure}
 %
 %
+\justifying
 Con la información suministrada por $UCERF2.0$ se identifican todas las posibles fallas sísmicas $200$ $km$ dentro de la región de estudio. Todas las fallas se usan para generar diferentes escenarios, dentro de los cuales se varía la ubicación del hypocentro y la forma de la ruptura.\\
 %
 En total se generan al rededor de $415.000$ escenarios de ruptura para cada sitio. 
@@ -165,7 +170,7 @@ En total se generan al rededor de $415.000$ escenarios de ruptura para cada siti
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=6cm]{img/UCERF3_Map.png}
+	\includegraphics[height=6cm]{img/UCERF3_Map.pdf}
 	\caption{Mapa $3D$ de California, mostrando las $2606$ fallas mapeadas en $UCERF3.0$ \cite[figura 1, página 5]{ucerf3}}
 \end{figure}
 %
@@ -180,14 +185,79 @@ En total se generan al rededor de $415.000$ escenarios de ruptura para cada siti
 %
 El modelo de velocidad comunitario de California (CVM-S \footnote{Actualmente se encuentra disponible en linea la versión $4.0$ de dicho modelo. \url{http://www.data.scec.org/research-tools/3d-velocity.html}, \url{http://scec.usc.edu/scecpedia/CVM-S}, último acceso $03$ de Octubre de $2014$.}, por sus siglas en ingles), tiene como propósito servir como modelo de referencia en varias áreas de investigación que dependen de las estrucutras, propiedades de los materiales tales como la velocidad de propagación de las ondas sísmicas, en profundidad para llevar acabo diferentes análisis. Las velocidades de mayor profundidad se construye con base reglas que relacionan la profundidad y la edad de los depósitos sedimentarios con las velocidades de las ondas sísmicas. Las velocidades de propagación en los depósitos menos profundos son tomadas de las medidas de los estudios geotécnicos. Las velocidades de propagación en roca son tomados de estudios tomográficos.\\
 %
-El modelo de velocidad CVM-S es de libre acceso, un usuario puede obtener los códigos escritos en Fortran, compilarlos y ejecutarlos en una máquina personal. El código se alimenta con un archivo de texto que contiene la latitud, longitud y profundidad de puntos donde se quiere conocer $V_p$, $V_s$ y la densidad.
+El modelo de velocidad CVM-S es de libre acceso, un usuario puede obtener los códigos escritos en Fortran, compilarlos y ejecutarlos en una máquina personal. El código se alimenta con un archivo de texto que contiene la latitud, longitud y profundidad de puntos donde se quiere conocer $V_p$, $V_s$ y $\rho$.
 %
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=6cm]{img/CVM-S4.png}
-	\caption{Secciones transversales de California mostrando la variación en profundidad de la velocidad. \footnote{\url{http://scec.usc.edu/scecwiki/images/a/a7/CVM-S4.png}}}
+	\includegraphics[height=5cm]{img/CVM-S4.pdf}
+	\caption{Secciones transversales de California mostrando la variación en profundidad de la velocidad. \footnote{\tiny \url{http://scec.usc.edu/scecwiki/images/a/a7/CVM-S4.png}\\}}
 \end{figure}
+%
+\end{frame}
+%
+%
+\begin{frame}[allowframebreaks]
+\frametitle{SCEC Community Velocity Model: CVM-H.}
+%
+\justifying
+%
+El Modelo de Velocidad Comunitario - Harvard (CVM-H \footnote{\tiny Actualmente se encuentra disponible en linea la versión $11.9.0$ de dicho modelo. \url{http://scec.usc.edu/scecpedia/CVM-H}}, por sus siglas en ingles), se basa en ensayos de reflexión sísmica y ``Borehole" para la estimación de la velocidad de propagación de la onda sísmica en puntos específicos. Dicha información se interpola en una malla bastante refinada cubriendo toda la región que se quiere estudiar. Adicionalmente contiene una descripción extensiva del modelo de velocidad en la región fuera de la costa (offshore).
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=5cm]{img/CVM64_perspectve.pdf}
+	\caption{Perspectiva Modelo de Velocidad Comunitario - Harvard (CVM-H). \footnote{\tiny\url{http://scec.usc.edu/scecwiki/images/a/a1/CVM64_perspectve.png}\\}}
+\end{figure}
+%
+%
+\end{frame}
+%
+%
+\section{¿Qué hacen y cómo lo hacen?}
+\subsection{Objetivos}
+\begin{frame}%[allowframebreaks]
+\frametitle{Objetivos}
+%
+\justifying
+%
+Uno de los objetivos de CyberShake es mejorar las Ecuaciones de Predicción de Movimiento del Suelo (GMPEs), comúnmente usadas en ingeniería.\\
+%
+El objetivo principal, el objetivo más ambicioso, es remplazar por completo las leyes de atenuación con simulaciones a gran escala para la predicción de los movimientos sísmicos del suelo y con estos calcular los mapas de amenaza sísmica.\\
+%
+CyberShake se está desarrollando en el Sur de California, pero la metodología se puede aplicar en cualquier región del mundo donde se cuente con la información suficiente y se tengan los recursos computacionales.
+%
+%
+\end{frame}
+%
+%
+\subsection{Modelos Computacionales}
+\begin{frame}[allowframebreaks]
+\frametitle{Modelos computacionales}
+%
+\justifying
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=5cm]{img/Discretizacion.pdf}
+	\caption{Mapa del Sur de California mostrando los puntos en los cuales se calculan las curvas de amenaza. \cite[figura 1, página 3]{gravesetal}}
+\end{figure}
+%
+En un sitio particular, CyberShake directamente muestrea la variabilidad del movimiento del suelo a partir de información de varios sismos (escenarios de ruptura) y elimina la necesidad de asumir que los procesos son ergódicos.\\
+%
+\textbf{Proceso Ergódico:} Los promedios o medias hacia la derecha son iguales hacia abajo. Es lo mismo hallar los indicadores de un acelerograma que de varios.\\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=3.5cm]{img/Ergodico.pdf}
+	\caption{Definición gráfica de un proceso Ergódico. Imagen tomada de \footnote{\tiny \url{http://www.iga.cu/publicaciones/revista/cte_07/art_07-01/id28.htm}\\}}
+\end{figure}
+%
+%
+Dentro del proyecto CyberShake, se han simulado escenarios de ruptura en $200$ sitios en la región de Los Angeles, con lo cual tienen las bases para la generación de mapas de amenaza sísmica a partir de CyberShake.\\
+%
+
+%
 %
 \end{frame}
 %
@@ -200,6 +270,8 @@ El modelo de velocidad CVM-S es de libre acceso, un usuario puede obtener los c�
 \begin{thebibliography}{1}
 
 \bibitem{book:aki} Keiiti Aki \& Paul G. Richards. {Q}uantitative {S}eismology. University Sciencie Books, 2nd Edition, Mill Valley, San Diego, 2002.
+
+\bibitem{baker} Baker, J. W., Luco, N., Abrahamson, N. A., Graves, R. W., Maechling, P. J., \& Olsen, K. B. (2014, July). Engineering Uses of Physics-based Ground Motion Simulations. In Proceedings of the Tenth US Conference on Earthquake Engineering.
 
 \bibitem{gravesetal} Graves, R.; Jordan, T. H.; Callaghan, S.; Deelman, E.; Field, E.; Juve, G.; ... \& Vahi, K. (2011). CyberShake: A physics-based seismic hazard model for southern California. Pure and Applied Geophysics, 168(3-4), 367-381.
 
