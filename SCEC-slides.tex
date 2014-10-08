@@ -43,18 +43,18 @@
 \frame{\titlepage}
 
 % Outline
-\begin{frame}
-	\frametitle{Outline}
+\begin{frame}[allowframebreaks]
+	\frametitle{Contenido}
 	\tableofcontents
 \end{frame}
 %
 %
-\section{Introduction}
+\section{Introducción}
 \begin{frame}
 \frametitle{Introducción}
 %
 \justifying
-Se presenta un resumen del proyecto {C}yber{S}hake, de sus objetivos y la foma como están abordando el problema de construir el modelo de Amenaza en el Sur de California.
+Se presenta un resumen del proyecto {C}yber{S}hake, de sus objetivos y la foma como están abordando el problema de construir el modelo de Amenaza Sísmica para el Sur de California.
 
 \url{http://scec.usc.edu/scecpedia/CyberShake}
 %
@@ -65,60 +65,70 @@ Se presenta un resumen del proyecto {C}yber{S}hake, de sus objetivos y la foma c
 \frametitle{¿Qué es el CyberShake?}
 %
 \justifying
-{C}yber{S}hake, es un proyecto de investigación del ``Southern California Earthquake Center's" (SCEC), dentro del cual se encuentran desarrollando un modelo computacional a gran escala para incluir determinísticamente el efecto de la fuente y la ruta de propagación de las ondas sísmicas en la amenaza sísmica del Sur de California.
+{C}yber{S}hake, es un proyecto de investigación del ``Southern California Earthquake Center's" (SCEC), dentro del cual se encuentran desarrollando un modelo computacional a gran escala para incluir determinísticamente el efecto de la fuente y la ruta de propagación de las ondas sísmicas en la amenaza sísmica del Sur de California.\\
 %
-\end{frame}
+%
+%\end{frame}
 %\transwipe
 %
-\begin{frame}
-\frametitle{¿Qué es el CyberShake?}
+%\begin{frame}
+%\frametitle{¿Qué es el CyberShake?}
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=6cm]{img/CyberShake_2009.pdf}
-	\caption{Mapa de amenaza sísmica del Sur de California calculado con CyberShake. \footnote{\tiny \url{http://scec.usc.edu/scecwiki/images/6/61/CandB_2008.PNG}\\}}
+	\includegraphics[height=5.5cm]{img/CyberShake_2009.pdf}
+	\caption{Mapa de amenaza sísmica del Sur de California calculado con CyberShake. \footnote{\tiny \url{http://scec.usc.edu/scecwiki/images/6/61/CandB_2008.PNG}}}
 \end{figure} 
 %
-\end{frame}
+%\end{frame}
 %
 %
-\begin{frame}
-\frametitle{¿Qué es el CyberShake?}
+%\begin{frame}
+%\frametitle{¿Qué es el CyberShake?}
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=6cm]{img/CandB_2008.pdf}
+	\includegraphics[height=5.5cm]{img/CandB_2008.pdf}
 	\caption{Mapa de amenaza sísmica del Sur de California calculado con las ecuaciones de predición del movimiento del suelo (GMPE). \footnote{\tiny \url{http://scec.usc.edu/scecwiki/images/6/61/CandB_2008.PNG}\\}}
+	\vspace{-.5 cm}
 \end{figure}
 %
 %
-%\begin{figure}[h]
-%\centering
-%%
-%	\subfloat[Ricker pulse.]{\includegraphics[width=0.4\textwidth]{img/CyberShake_2009.PNG}}\qquad
-%	%
-%	\subfloat[Ricker pulse spectrum.]{\includegraphics[width=0.4\textwidth]{img/CandB_2008.PNG}}
-%	%
-%\caption{Ricker pulse and its spectrum.}
+\end{frame}
 %
-%\end{figure}
+%
+\section{Objetivos}
+\subsection{Objetivos}
+\begin{frame}%[allowframebreaks]
+\frametitle{Objetivos}
+%
+\justifying
+%
+Uno de los objetivos de CyberShake es mejorar las Ecuaciones de Predicción de Movimiento del Suelo (GMPEs), comúnmente usadas en ingeniería.\\
+%
+El objetivo principal, el objetivo más ambicioso, es remplazar por completo las leyes de atenuación con simulaciones a gran escala para la predicción de los movimientos sísmicos del suelo y con estos calcular los mapas de amenaza sísmica.\\
+%
+Definir un marco para aplicar la metodología usada en CyberShake en cualquier región del mundo donde se cuente con la información suficiente y se tengan los recursos computacionales.
+%
+%
 \end{frame}
 %
 %
 \section{¿Qué se hace actualmente?}
-\begin{frame}[allowframebreaks]\frametitle{Ground Motion Prediction Equations}
+\begin{frame}[allowframebreaks]\frametitle{Leyes de Atenuación}
 %
 \justifying
-Las Ecuaciones de Predicción del Movimiento Sísmico del Suelo (GMPEs), especifican la probabilidad de excedencia del movimiento del suelo en un sitio particular para una fuente específica representada por un escenario de ruptura específico.\\
-%
-Las GMPEs entregan $S_a \left( T \right)$ para el $5\%$ de amortiguamiento.
+Las Leyes de Atenuación o Ecuaciones de Predicción del Movimiento Sísmico del Suelo (GMPE por sus siglas en Inglés), especifican la probabilidad de excedencia del movimiento del suelo en un sitio particular para una fuente específica representada por un escenario de ruptura específico.
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=3cm]{img/UCERF2_GMPE_2007.pdf}
+	\includegraphics[height=4cm]{img/UCERF2_GMPE_2007.pdf}
 	\caption{Mapa de amenaza sísmica del Sur de California calculado con cautro ecuaciones de predición del movimiento del suelo (GMPE) diferentes. \footnote{ \tiny\url{http://scec.usc.edu/scecwiki/images/b/bd/UCERF2_GMPE_2007.PNG}\\}}
+	\vspace{-.5 cm}
 \end{figure}
 %
 \justifying
+Las GMPEs entregan $S_a \left( T \right)$ para el $5\%$ de amortiguamiento.\\
+%
 A pesar de que las cuatro leyes de atenuación son aceptadas en la comunidad científica, es evidente las grandes diferencias entre ellas.\\
 %
 %
@@ -215,22 +225,6 @@ El Modelo de Velocidad Comunitario - Harvard (CVM-H \footnote{\tiny Actualmente 
 %
 %
 \section{¿Qué hacen y cómo lo hacen?}
-\subsection{Objetivos}
-\begin{frame}%[allowframebreaks]
-\frametitle{Objetivos}
-%
-\justifying
-%
-Uno de los objetivos de CyberShake es mejorar las Ecuaciones de Predicción de Movimiento del Suelo (GMPEs), comúnmente usadas en ingeniería.\\
-%
-El objetivo principal, el objetivo más ambicioso, es remplazar por completo las leyes de atenuación con simulaciones a gran escala para la predicción de los movimientos sísmicos del suelo y con estos calcular los mapas de amenaza sísmica.\\
-%
-CyberShake se está desarrollando en el Sur de California, pero la metodología se puede aplicar en cualquier región del mundo donde se cuente con la información suficiente y se tengan los recursos computacionales.
-%
-%
-\end{frame}
-%
-%
 \subsection{Modelos Computacionales}
 \begin{frame}%[allowframebreaks]
 \frametitle{Modelos computacionales}
@@ -246,6 +240,7 @@ En un sitio particular, CyberShake directamente muestrea la variabilidad del mov
 \end{frame}
 %
 %
+\subsection{Procesos Ergódicos}
 \begin{frame}%[allowframebreaks]
 \frametitle{Procesos Ergódicos}
 %
@@ -262,6 +257,7 @@ En un sitio particular, CyberShake directamente muestrea la variabilidad del mov
 \end{frame}
 %
 %
+\subsection{Discretización región de estudio}
 \begin{frame}%[allowframebreaks]
 \frametitle{Discretización de la región de estudio}
 %
@@ -306,6 +302,79 @@ Cada escenario diferente representa un modelo computacional diferente, por lo cu
 \end{frame}
 %
 %
+\subsection{Funciones de Green}
+\begin{frame}[allowframebreaks]
+\frametitle{Funciones de Green en Elastodinámica}
+%
+\justifying
+%
+\textbf{Función de Green en Elastodinámica:} Desplazamiento debido a una fuente puntual.
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=4cm]{img/Figure1.pdf}
+	\caption{Nomenclatura Función de Green. \cite[figura 9.1, página 280]{book:pujol}}
+	\vspace{-.5 cm}
+\end{figure}
+%
+\begin{align*}
+	\mathbf{G}_{in} \left( \vec{x}, t; \vec{\xi}, \tau \right) \text{Función de Green}\\
+\end{align*}
+%
+Donde:
+%
+\begin{itemize}
+%
+	\item $\vec{x}:$ Ubicación en la cual se quiere conocer el desplazamiento.
+	%
+	\item $t:$ Tiempo en el cual se desea cononcer el desplazamiento en el punto $\vec{x}$.
+	%
+	\item $\vec{\xi}:$ Punto de aplicación de la carga puntual.
+	%
+	\item $\tau:$ Tiempo en el cual se aplica la carga en el punto $\vec{\xi}$.
+%
+\end{itemize}
+%
+%
+\end{frame}
+%
+%
+\subsection{Reciprocidad}
+\begin{frame}[allowframebreaks]
+\frametitle{Reciprocidad en Elastodinámica}
+%
+\justifying
+%
+Sobre un punto $\vec{\xi}_1$ de un medio continuo actúa una carga $\vec{f}_m$ en dirección $\hat{m}$ y sobre un punto $\vec{\xi}_2$ actúa una carga $\vec{g}_n$ en dirección $\hat{n}$.
+%
+\begin{figure}[h]
+\centering
+%
+	\subfloat[Carga 1]{\includegraphics[width=0.4\textwidth]{img/Recipro1.pdf}}
+	%
+	\subfloat[Carga 2]{\includegraphics[width=0.4\textwidth]{img/Recipro2.pdf}}
+	%
+	\caption{Reciprocidad}
+%
+\end{figure}
+%
+Si $\vec{f}_m$ y $\vec{g}_m$ son fuerzas unitarias, se puede afirmar que:\\
+%
+El desplazamiento que se genera en el punto $\vec{\xi}_2$ en la dirección $\hat{n}$ debido a la aplicación de una carga unitaria en $\vec{\xi}_1$ en la dirección $\hat{m}$, es igual al desplazamiento que se genera en el punto $\vec{\xi}_1$ en la dirección $\hat{m}$ si la carga unitaria se aplica en el punto $\vec{\xi}_2$ en la dirección $\hat{n}$.
+%
+\begin{align*}
+	\mathbf{G}_{nm} \left( \vec{\xi}_2, \tau ; \vec{\xi}_1, 0 \right)  = \mathbf{G}_{mn} \left( \vec{\xi}_1, \tau ; \vec{\xi}_2, 0 \right) \hspace{1 cm} \textbf{donde: $\tau_1=\tau_2=0$}\\
+	%
+	\mathbf{G}_{nm} \left( \vec{\xi}_2, \tau_2 ; \vec{\xi}_1, \tau_1 \right)  = \mathbf{G}_{mn} \left( \vec{\xi}_1, -\tau_1 ; \vec{\xi}_2, -\tau_2 \right) \hspace{1 cm} \textbf{donde: $\tau=0$}
+\end{align*}
+%
+Donde las ecuaciones anteriores representan la reciprocidad espacial y espacio-temporal respectivamente.
+%
+%
+\end{frame}
+%
+%
+\subsection{Tensores de Deformación de Green}
 \begin{frame}[allowframebreaks]
 \frametitle{¿Cómo se calculan las SGT?}
 %
@@ -329,27 +398,160 @@ CyberShake discretiza la región de estudio en $250$ sitios en los cuales se qui
 \end{figure}
 %
 %
-En cada uno de los $250$ puntos en los que se discretiza la región se aplica un carga unitaria en dos direcciones ortongales, cada carga aplicada es un anális independiente y no se aplica la componente vertical pues dentro de CyberShake no están interesados en esta componente, y se calculan los tensores de deformación de Green sobre los puntos en los cuales se tienen discretizadas todas las fallas para cada una de las cargas.\\
+En cada uno de los $250$ puntos en los que se discretiza la región se aplica un carga unitaria en dos direcciones ortongales, cada carga aplicada es un análisis independiente y no se aplica la componente vertical pues dentro de CyberShake no están interesados en esta componente, y se calculan los tensores de deformación de Green sobre los puntos en los cuales se tienen discretizadas todas las fallas para cada una de las cargas.\\
 %
-Función de Green en Elastodinámica: Desplazamiento debido a una fuente puntual.\\
+Gradiente de Espacial de Deformación:
 %
 \begin{align*}
-	G_{in} \left( \vec{x}, t; \vec{\xi}, \tau \right) \text{Función de Green}
+	\varepsilon \left( \vec{r}, t \right) = \dfrac{1}{2} \left\lbrace \left[ \mathbf{\nabla u } \left( \vec{r}, t \right) \right] + \left[ \mathbf{\nabla u} \left( \vec{r}, t \right) \right]^T \right\rbrace
 \end{align*}
 %
-Usando reciprocidad, los Tensores de Deformación de Green se usan para calcular los registros sintéticos en cada uno de los $250$ sitios en los cuales fue discretizada la región para los diferentes escenarios de ruptura que se definieron anteriormente.
+Es posible conocer el tensor de deformación de orden $3$, de forma análoga al Gradiente de Deformación Espacial, usando el gradiente espacial de los elementos del Tensor de green:
+%
+\begin{align*}
+	\mathbf{H} \left( \vec{r}, t;\vec{r}_s \right) = \dfrac{1}{2} \left\lbrace \left[ \mathbf{\nabla G} \left(\vec{r}, t; \vec{r}_s \right) \right] + \left[ \mathbf{\nabla G} \left( \vec{r}, t; \vec{r}_s \right) \right]^{213} \right\rbrace
+\end{align*}
+%
+Donde:
+%
+\begin{itemize}
+%
+	\justifying
+	\item $\vec{r}_s:$ Ubicación donde se aplica la carga de Green, el gradiente espacial opera sobre $\vec{r}$.
+	%
+	\item $\left[  \cdot \right]^{213}:$ Indica transposición en los dos primeros índices del tensor.
+%
+\end{itemize}
+%
+En notación indicial:
+%
+\begin{align*}
+\left[ \mathbf{H}_{inj} \right]^{213} = \mathbf{H}_{nij}
+\end{align*}
+%
+\begin{align*}
+	\mathbf{H}_{ijn} \left( \vec{r}, t; \vec{r}_s \right) = \dfrac{1}{2} \left[ \mathbf{G}_{jn,i} \left( \vec{r}, t; \vec{r}_s \right) + \mathbf{G}_{in,j} \left( \vec{r}, t; \vec{r}_s \right) \right]
+\end{align*}
+%
+\justifying
+El Tensor de Orden $3$ representa la deformación asociada con el Tensor de Green y es conocido como \textbf{``Tensor de Deformación de Green"} \cite{zhaogreen}.\\
+%
+El campo de desplazamiento debido a una fuente sísmica puntual ``double-couple" puede ser expresada como, \cite{book:aki}:
+%
+\begin{align*}
+	u_n \left( \vec{r}, t; \vec{r}_s \right) = \mathbf{G}_{nj,i}^S \left( \vec{r}, t; \vec{r}_s \right) \mathbf{M}_{ji}
+\end{align*}
+%
+Donde:
+%
+\begin{itemize}
+	\justifying
+	\item $\mathbf{M}:$ Tensor Simétrico de Momentos
+	%
+	\item El súper índice $S$ indica que la derivada opera sobre las coordenadas de la fuente.
+\end{itemize}
+%
+\justifying
+Teniendo en cuenta la simetría del tensor $\mathbf{M}$ y aplicando el teorema de reciprocidad al tensor de Green:
+%
+\begin{align*}
+	u_n \left( \vec{r}, t; \vec{r}_s \right) = \dfrac{1}{2} \left[ \mathbf{G}_{jn,i}^S \left( \vec{r}_s, t; \vec{r} \right) + \mathbf{G}_{in,j}^S \left( \vec{r}_s, t; \vec{r} \right) \right] \mathbf{M}_{ji}
+\end{align*}
+	%
+\begin{align*}
+	u_n \left( \vec{r}, t; \vec{r}_s \right) = \mathbf{H}_{ijn} \left( \vec{r}_s, t; \vec{r} \right) \mathbf{M}_{ji}
+\end{align*}
+%
+\justifying
+La última ecuación es la relación lineal entre el desplazamiento y el Tensor de Momentos, por ende, el Tensor de Deformaciones de Green ($\mathbf{H}$) es usado en la inversión de fuentes sísmicas. \cite{zhaogreen}
 %
 \begin{figure}[h]
-\centering
-%%
-	\subfloat[Carga 1]{\includegraphics[width=0.4\textwidth]{img/Recipro1.pdf}}\qquad
-%	%
-	\subfloat[Carga 2]{\includegraphics[width=0.4\textwidth]{img/Recipro2.pdf}}
-%	%
-\caption{Reciprocidad}
-%
+	\centering
+	\includegraphics[height=4cm]{img/Inversion.pdf}
+	\caption{Comparación de los resultados arrojados por la simulación de una ruptura de la falla de San Andrés que genera un sismo de $M_W=7.8$. Rojo: Modelación directa, Negra: Reciprocidad sobre el Tensor de Deformaciones de Green \cite[figura 5, página 7]{gravesetal}}
+	\vspace{-.5 cm}
 \end{figure}
 %
+\justifying
+Una forma de calcular el Tensor de Deformaciones de Green en los puntos en los cuales se discretizan las fallas, es calculando las derivadas numéricas respecto a las coordenadas espaciales del campo de desplazamientos generado por la carga unitaria aplicada en el sitio sobre el cual se quiere conocer la respuesta sísmica.\\
+%
+Trabajando con un Software de Elementos Finitos, es posible calcular directamente el Tensor de Desplazamientos sin necesidad de recurrir a la derivación numérica.
+%
+%
+\end{frame}
+%
+%
+\section{Mapas de Amenaza Sísmica}
+\subsection{Curvas de Amenaza}
+\begin{frame}[allowframebreaks]
+\frametitle{Curvas de Amenaza}
+%
+\justifying
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=6.5cm]{img/CurvasAmenaza.pdf}
+	\caption{Curvas de Amenaza calculadas con dos leyes de atenuación y CyberShake \cite[figura 7, página 10]{gravesetal}}
+	\vspace{-.5 cm}
+\end{figure}
+%
+Las curvas de amenaza presentadas, han sido calculadas empleando las GMPE de Boore y Atkinson (2008), Campbell y Bozorgnia (2009) y con la plataforma CyberShake.\\
+%
+Ambas GMPE utilizan el $V_{s30}$ (velocidad de viaje de las ondas sísmicas en los $30$m superiores) para tener en cuenta los efectos de sitio.\\
+%
+Las curvas de amenaza halladas para los movimientos del suelo encontrados con CyberShake, son calculadas con el software disponible en \url{http://www.opensha.org}, el cual combina la amplitud del movimiento del suelo con las probabilidades de ruptura especificadas en $UCERF2.0$ y $UCERF3.0$.
+%
+%
+\end{frame}
+%
+%
+\subsection{Mapas de Amenaza}
+\begin{frame}[allowframebreaks]
+\frametitle{Mapas de Amenaza}
+%
+\justifying
+%
+Por último, para generar los mapas de amenaza sísmica con CyberShake, se lleva a cabo el siguiente procedimiento:
+%
+\begin{itemize}
+%
+	\item Cálculo del mapa de amenaza sísmica con las GMPE.
+	%
+	\item Cálculo de las curvas de amenaza con los movimientos del suelo hallados con CyberShake. Actualmente esta información se tiene en $250$ sitios.
+	%
+	\item Cálculo del residuo entre curvas de amenaza de las GMPE y CyberShake.
+	%
+	\item Los residuos del punto anterior se interpolan en toda la región de estudio.
+	%
+	\item Al mapa de amenaza calculado con las GMPE se les suma el residuo interpolado y se encuentra el Mapa de Amenaza calculado con CyberShake. 
+%
+\end{itemize}
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=6.5cm]{img/ProcesoMapaAmenaza.pdf}
+	\caption{Procedimeinto calculo mapas de amenaza con CyberShake \cite[figura 9, página 12]{gravesetal}}
+	\vspace{-.5 cm}
+\end{figure}
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=6.5cm]{img/MapaAmenaza.pdf}
+	\caption{Mapas de Amenaza con CyberShake construido con $4$ Leyes de Atenuación Diferentes \footnote{\tiny \url{http://scec.usc.edu/scecwiki/images/a/ad/UCERF2_WaveProp_2009.PNG}}}
+	\vspace{-.5 cm}
+\end{figure}
+%
+%
+\end{frame}
+%
+%
+\section{Conclusiones}
+\begin{frame}[allowframebreaks]
+\frametitle{Conclusiones}
+%
+\justifying
+%
+Acá van las conclusiones
 %
 \end{frame}
 %
@@ -363,13 +565,19 @@ Usando reciprocidad, los Tensores de Deformación de Green se usan para calcular
 
 \bibitem{book:aki} Keiiti Aki \& Paul G. Richards. {Q}uantitative {S}eismology. University Sciencie Books, 2nd Edition, Mill Valley, San Diego, 2002.
 
+\bibitem{book:pujol} Jose Pujol. Elastic Wave Propagation and Generation in Seismology. Cambridge University Press, 1st Edition, Cambridge, United Kingdom, 2003.
+
 \bibitem{baker} Baker, J. W., Luco, N., Abrahamson, N. A., Graves, R. W., Maechling, P. J., \& Olsen, K. B. (2014, July). Engineering Uses of Physics-based Ground Motion Simulations. In Proceedings of the Tenth US Conference on Earthquake Engineering.
 
 \bibitem{gravesetal} Graves, R.; Jordan, T. H.; Callaghan, S.; Deelman, E.; Field, E.; Juve, G.; ... \& Vahi, K. (2011). CyberShake: A physics-based seismic hazard model for southern California. Pure and Applied Geophysics, 168(3-4), 367-381.
 
+\bibitem{gravesgreen} Graves, R.; \& Wald, D. J. (2001). Resolution analysis of finite fault source inversion using one and three dimensional Green's functions: 1. Strong motions. Journal of Geophysical Research: Solid Earth (1978–2012), 106(B5), 8745-8766.
+
 \bibitem{ucerf2} Field, E. H., Dawson, T. E., Felzer, K. R., Frankel, A. D., Gupta, V., Jordan, T. H., ... \& Wills, C. J. (2009). Uniform California earthquake rupture forecast, version 2 (UCERF 2). Bulletin of the Seismological Society of America, 99(4), 2053-2107.
 
 \bibitem{ucerf3} Field, E.H., Biasi, G.P., Bird, P., Dawson, T.E., Felzer, K.R., Jackson, D.D., Johnson, K.M., Jordan, T.H., Madden, C., Michael, A.J., Milner, K.R., Page, M.T., Parsons, T., Powers, P.M., Shaw, B.E., Thatcher, W.R., Weldon, R.J., II, and Zeng, Y., 2013, Uniform California earthquake rupture forecast, version 3 (UCERF3)—The time-independent model: U.S. Geological Survey Open-File Report 2013–1165, 97 p., California Geological Survey Special Report 228, and Southern California Earthquake Center Publication 1792, \url{http://pubs.usgs.gov/of/2013/1165/}.
+
+\bibitem{zhaogreen} Zhao, L., Chen, P., \& Jordan, T. H. (2006). Strain Green’s tensors, reciprocity, and their applications to seismic source and structure studies. Bulletin of the Seismological Society of America, 96(5), 1753-1763.
 
 \end{thebibliography}
 
