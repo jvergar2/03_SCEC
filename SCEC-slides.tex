@@ -232,31 +232,123 @@ CyberShake se está desarrollando en el Sur de California, pero la metodología 
 %
 %
 \subsection{Modelos Computacionales}
-\begin{frame}[allowframebreaks]
+\begin{frame}%[allowframebreaks]
 \frametitle{Modelos computacionales}
 %
 \justifying
 %
-\begin{figure}[h]
-	\centering
-	\includegraphics[height=5cm]{img/Discretizacion.pdf}
-	\caption{Mapa del Sur de California mostrando los puntos en los cuales se calculan las curvas de amenaza. \cite[figura 1, página 3]{gravesetal}}
-\end{figure}
+En un sitio particular, es necesario conocer la incidencia de varios eventos sísmicos, generados por diferentes sismofuentes, para poder generar unas curvas de amenaza sísmica lo suficientemente confiables.\\
+%
+Teniendo los modelos computacionales a gran escala, es posible generar cuantos eventos sísmicos sean necesarios y tener en cuenta la generación de sismos desde varios tipos de fuentes, tener en cuenta la incidencia de los factores tales como la ruta de propagación de las ondas, los efectos de fuente y sismos de diferentes magnitudes generados por una misma fuente.\\
 %
 En un sitio particular, CyberShake directamente muestrea la variabilidad del movimiento del suelo a partir de información de varios sismos (escenarios de ruptura) y elimina la necesidad de asumir que los procesos son ergódicos.\\
 %
-\textbf{Proceso Ergódico:} Los promedios o medias hacia la derecha son iguales hacia abajo. Es lo mismo hallar los indicadores de un acelerograma que de varios.\\
-
+\end{frame}
+%
+%
+\begin{frame}%[allowframebreaks]
+\frametitle{Procesos Ergódicos}
+%
+\justifying
+%
 \begin{figure}[h]
 	\centering
 	\includegraphics[height=3.5cm]{img/Ergodico.pdf}
 	\caption{Definición gráfica de un proceso Ergódico. Imagen tomada de \footnote{\tiny \url{http://www.iga.cu/publicaciones/revista/cte_07/art_07-01/id28.htm}\\}}
 \end{figure}
 %
+\textbf{Proceso Ergódico:} Los promedios o medias hacia la derecha son iguales hacia abajo. Es lo mismo hallar los indicadores de un acelerograma que de varios.\\
 %
-Dentro del proyecto CyberShake, se han simulado escenarios de ruptura en $200$ sitios en la región de Los Angeles, con lo cual tienen las bases para la generación de mapas de amenaza sísmica a partir de CyberShake.\\
+\end{frame}
 %
-
+%
+\begin{frame}%[allowframebreaks]
+\frametitle{Discretización de la región de estudio}
+%
+\justifying
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=4cm]{img/Discretizacion.pdf}
+	\caption{Mapa del Sur de California mostrando los puntos en los cuales se calculan las curvas de amenaza. \cite[figura 1, página 3]{gravesetal}}
+	\vspace{-.5 cm}
+\end{figure}
+%
+Dentro del proyecto CyberShake, se han simulado diferentes escenarios de ruptura y se han calculado las curvas de amenaza en $250$ sitios en la región de Los Angeles, con lo cual tienen las bases para la generación de mapas de amenaza sísmica a partir de CyberShake.\\
+%
+%
+\end{frame}
+%
+%
+\begin{frame}[allowframebreaks]
+\frametitle{¿Por qué no calcular las curvas de amenaza en los puntos de la malla en superficie?}
+%
+\justifying
+%
+Dentro de la región de Los Angeles se tienen identificadas al rededor de $10.000$ fallas que pueden generar sismos de intensidad mayor igual a $6.0$ $(M_w \geq 6.0)$ que pueden afectar la región bajo estudio.
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=4cm]{img/UCERF3_Map.pdf}
+	\caption{Mapa $3D$ de California, mostrando las $10.000$ fallas mapeadas en $UCERF3.0$ \cite[figura 1, página 5]{ucerf3}}
+\end{figure}
+%
+A partir de cada falla se generan diferentes escenarios, donde se varían factores tales como la ubicación del hipocentro, magnitud del evento y proceso de ruptura. Dentro de CyberShake se han generado al rededor de $415.000$ escenarios diferentes.\\
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=4cm]{img/ModeloRuptura.pdf}
+	\caption{Cinemática para diferentes escenarios de ruptura. \cite[figura 4, página 7]{gravesetal}}
+\end{figure}
+%
+Cada escenario diferente representa un modelo computacional diferente, por lo cual sería necesario analizar $415.000$ modelos $3D$ a gran escala con los costos computacionales que esto representa y la cantidad de información que se genera.\\ 
+%
+%
+\end{frame}
+%
+%
+\begin{frame}[allowframebreaks]
+\frametitle{¿Cómo se calculan las SGT?}
+%
+\justifying
+%
+CyberShake discretiza la región de estudio en $250$ sitios en los cuales se quiere calcular la curva de amenaza, puntos en los cuales se quieren conocer los registros sintéticos.
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=4cm]{img/Discretizacion.pdf}
+	\caption{Mapa del Sur de California mostrando los puntos en los cuales se calculan los registros sintéticos. \cite[figura 1, página 3]{gravesetal}}
+	\vspace{-.5 cm}
+\end{figure}
+%
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=4cm]{img/SGT.pdf}
+	\caption{Cálculo de la funciones de Green}
+	\vspace{-.5 cm}
+\end{figure}
+%
+%
+En cada uno de los $250$ puntos en los que se discretiza la región se aplica un carga unitaria en dos direcciones ortongales, cada carga aplicada es un anális independiente y no se aplica la componente vertical pues dentro de CyberShake no están interesados en esta componente, y se calculan los tensores de deformación de Green sobre los puntos en los cuales se tienen discretizadas todas las fallas para cada una de las cargas.\\
+%
+Función de Green en Elastodinámica: Desplazamiento debido a una fuente puntual.\\
+%
+\begin{align*}
+	G_{in} \left( \vec{x}, t; \vec{\xi}, \tau \right) \text{Función de Green}
+\end{align*}
+%
+Usando reciprocidad, los Tensores de Deformación de Green se usan para calcular los registros sintéticos en cada uno de los $250$ sitios en los cuales fue discretizada la región para los diferentes escenarios de ruptura que se definieron anteriormente.
+%
+\begin{figure}[h]
+\centering
+%%
+	\subfloat[Carga 1]{\includegraphics[width=0.4\textwidth]{img/Recipro1.pdf}}\qquad
+%	%
+	\subfloat[Carga 2]{\includegraphics[width=0.4\textwidth]{img/Recipro2.pdf}}
+%	%
+\caption{Reciprocidad}
+%
+\end{figure}
 %
 %
 \end{frame}
@@ -278,8 +370,6 @@ Dentro del proyecto CyberShake, se han simulado escenarios de ruptura en $200$ s
 \bibitem{ucerf2} Field, E. H., Dawson, T. E., Felzer, K. R., Frankel, A. D., Gupta, V., Jordan, T. H., ... \& Wills, C. J. (2009). Uniform California earthquake rupture forecast, version 2 (UCERF 2). Bulletin of the Seismological Society of America, 99(4), 2053-2107.
 
 \bibitem{ucerf3} Field, E.H., Biasi, G.P., Bird, P., Dawson, T.E., Felzer, K.R., Jackson, D.D., Johnson, K.M., Jordan, T.H., Madden, C., Michael, A.J., Milner, K.R., Page, M.T., Parsons, T., Powers, P.M., Shaw, B.E., Thatcher, W.R., Weldon, R.J., II, and Zeng, Y., 2013, Uniform California earthquake rupture forecast, version 3 (UCERF3)—The time-independent model: U.S. Geological Survey Open-File Report 2013–1165, 97 p., California Geological Survey Special Report 228, and Southern California Earthquake Center Publication 1792, \url{http://pubs.usgs.gov/of/2013/1165/}.
-
-\bibitem{wiki:FVM} Finite volume method. (2014, April 22). In Wikipedia, The Free Encyclopedia. Retrieved 00:44, September 25, 2014, from \url{http://en.wikipedia.org/w/index.php?title=Finite_volume_method&oldid=605282055}
 
 \end{thebibliography}
 
