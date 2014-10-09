@@ -15,16 +15,16 @@
 %\usepackage{natbib}
 
 %
-\hypersetup{pdfstartview={Fit}, bookmarks=True, pdftitle={SCEC Presentation}, pdfauthor={Juan Carlos Vergara-Gallego}, pdfsubject={Presentation}, pdfkeywords={Waves, Elasticity, Numerical Methods, High Performance Computing, BEM}, pdfpagemode=UseOutlines, bookmarks, bookmarksopen, pdfstartview=FitH, colorlinks,linkcolor=blue, urlcolor=black, citecolor=blue}  % Configure hyperref
-
-%--- New commands ----%
-\newcommand{\footref}[1]{\textsuperscript{\ref{#1}}}
-\newcommand{\pardiff}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\pardiffd}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+%\hypersetup{pdfstartview={Fit}, bookmarks=True, pdftitle={SCEC Presentation}, pdfauthor={Juan Carlos Vergara-Gallego}, pdfsubject={Presentation}, pdfkeywords={Waves, Elasticity, Numerical Methods, High Performance Computing, BEM}, pdfpagemode=UseOutlines, bookmarks, bookmarksopen, pdfstartview=FitH, colorlinks,linkcolor=blue, urlcolor=black, citecolor=blue}  % Configure hyperref
+%
+%%--- New commands ----%
+%\newcommand{\footref}[1]{\textsuperscript{\ref{#1}}}
+%\newcommand{\pardiff}[2]{\frac{\partial #1}{\partial #2}}
+%\newcommand{\pardiffd}[2]{\frac{\partial^2 #1}{\partial #2^2}}
 %
 %---------------------%
 %\usefonttheme[onlymath]{serif}  % Make equations to be in serif fonts
-\usefonttheme{serif}  % Make equations to be in serif fonts
+%\usefonttheme{serif}  % Make equations to be in serif fonts
 
 %title
 
@@ -71,7 +71,7 @@
 \item ¿Qué hacen actualmente?
 \item ¿Con qué información cuenta?
 	\begin{enumerate}
-		\item UCERF 2.0 y 3.0
+		\item UCERF $2\.0$ y $3\.0$
 		\item Modelos de Velocidad
 	\end{enumerate}
 \item ¿Qué hacen y como lo hacen?
@@ -163,17 +163,19 @@ Definir un marco para aplicar la metodología usada en CyberShake en cualquier r
 \begin{frame}[allowframebreaks]\frametitle{Leyes de Atenuación}
 %
 \justifying
-Las Leyes de Atenuación o Ecuaciones de Predicción del Movimiento Sísmico del Suelo (GMPE por sus siglas en Inglés), especifican la probabilidad de excedencia del movimiento del suelo en un sitio particular para una fuente específica representada por un escenario de ruptura específico.
+%
+Las Leyes de Atenuación o Ecuaciones de Predicción del Movimiento Sísmico del Suelo (GMPE por sus siglas en Inglés), especifican la probabilidad de excedencia del movimiento del suelo en un sitio particular para una fuente específica representada por un escenario de ruptura específico.\\
+%
+Las GMPEs entregan $S_a \left( T \right)$ para el $5\%$ de amortiguamiento.\\
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=4cm]{img/UCERF2_GMPE_2007.pdf}
+	\includegraphics[height=4.5cm]{img/UCERF2_GMPE_2007.pdf}
 	\caption{Mapa de amenaza sísmica del Sur de California calculado con cautro ecuaciones de predición del movimiento del suelo (GMPE) diferentes. \footnote{ \tiny\url{http://scec.usc.edu/scecwiki/images/b/bd/UCERF2_GMPE_2007.PNG}\\}}
 	\vspace{-.5 cm}
 \end{figure}
 %
 \justifying
-Las GMPEs entregan $S_a \left( T \right)$ para el $5\%$ de amortiguamiento.\\
 %
 A pesar de que las cuatro leyes de atenuación son aceptadas en la comunidad científica, es evidente las grandes diferencias entre ellas.\\
 %
@@ -184,13 +186,13 @@ A pesar de que las cuatro leyes de atenuación son aceptadas en la comunidad cie
 %\section{¿Con que información cuentan?}
 %\subsection{UCERF $2.0$ y $3.0$}
 \begin{frame}[allowframebreaks]
-\frametitle{Uniform California Earthquake Rupture Forecast, Version $2.0$ y $3.0$}
+\frametitle{Uniform California Earthquake Rupture Forecast, Version $2\.0$ y $3\.0$}
 %
 \justifying
 %
-El $UCERF3.0$ estima la probabilidad de ocurrencia de sismos, para una magnitud específica y localización, que pueden ocurrir dentro de una ventana de tiempo en California EE.UU. La versión $3.0$ es una mejora de la versión $2.0$, dando la posibilidad de la ruptura simultanea de varias fallas y mejorando la sobre-estimación que daba $UCERF2.0$ para magnitudes entre $6.5$ y $7.0$.\\
+El $UCERF3\.0$ estima la probabilidad de ocurrencia de sismos, para una magnitud específica y localización, que pueden ocurrir dentro de una ventana de tiempo en California EE.UU. La versión $3\.0$ es una mejora de la versión $2\.0$, dando la posibilidad de la ruptura simultanea de varias fallas y mejorando la sobre-estimación que daba $UCERF2\.0$ para magnitudes entre $6\.5$ y $7\.0$.\\
 %
-Cuantro componentes básicos de $UCERF3.0$:
+Cuantro componentes básicos de $UCERF3\.0$:
 %
 	\begin{itemize}
 	\justifying
@@ -213,9 +215,9 @@ Cuantro componentes básicos de $UCERF3.0$:
 %
 %
 \justifying
-Con la información suministrada por $UCERF2.0$ se identifican todas las posibles fallas sísmicas $200$ $km$ dentro de la región de estudio. Todas las fallas se usan para generar diferentes escenarios, dentro de los cuales se varía la ubicación del hypocentro y la forma de la ruptura.\\
+Con la información suministrada por $UCERF2\.0$ se identifican todas las posibles fallas sísmicas $200$ $km$ dentro de la región de estudio. Todas las fallas se usan para generar diferentes escenarios, dentro de los cuales se varía la ubicación del hypocentro y la forma de la ruptura.\\
 %
-En total se generan al rededor de $415.000$ escenarios de ruptura para cada sitio. 
+En total se generan al rededor de $415,000$ escenarios de ruptura para cada sitio. 
 %
 %
 %\end{frame}
@@ -227,7 +229,7 @@ En total se generan al rededor de $415.000$ escenarios de ruptura para cada siti
 \begin{figure}[h]
 	\centering
 	\includegraphics[height=5cm]{img/UCERF3_Map.pdf}
-	\caption{Mapa $3D$ de California, mostrando las $2606$ fallas mapeadas en $UCERF3.0$ \cite[figura 1, página 5]{ucerf3}}
+	\caption{Mapa $3D$ de California, mostrando las $2606$ fallas mapeadas en $UCERF3\.0$ \cite[figura 1, página 5]{ucerf3}}
 \end{figure}
 %
 \end{frame}
@@ -239,7 +241,7 @@ En total se generan al rededor de $415.000$ escenarios de ruptura para cada siti
 %
 \justifying
 %
-El modelo de velocidad comunitario de California (CVM-S \footnote{ \tiny Actualmente se encuentra disponible en linea la versión $4.0$ de dicho modelo. \url{http://www.data.scec.org/research-tools/3d-velocity.html}, \url{http://scec.usc.edu/scecpedia/CVM-S}, último acceso $03$ de Octubre de $2014$.}, por sus siglas en ingles), tiene como propósito servir como modelo de referencia en varias áreas de investigación que dependen de las estrucutras, propiedades de los materiales tales como la velocidad de propagación de las ondas sísmicas, en profundidad para llevar acabo diferentes análisis. Las velocidades de mayor profundidad se construye con base reglas que relacionan la profundidad y la edad de los depósitos sedimentarios con las velocidades de las ondas sísmicas. Las velocidades de propagación en los depósitos menos profundos son tomadas de las medidas de los estudios geotécnicos. Las velocidades de propagación en roca son tomados de estudios tomográficos.\\
+El modelo de velocidad comunitario de California (CVM-S \footnote{ \tiny Actualmente se encuentra disponible en linea la versión $4\.0$ de dicho modelo. \url{http://www.data.scec.org/research-tools/3d-velocity.html}, \url{http://scec.usc.edu/scecpedia/CVM-S}, último acceso $03$ de Octubre de $2014$.}, por sus siglas en ingles), tiene como propósito servir como modelo de referencia en varias áreas de investigación que dependen de las estrucutras, propiedades de los materiales tales como la velocidad de propagación de las ondas sísmicas, en profundidad para llevar acabo diferentes análisis. Las velocidades de mayor profundidad se construye con base reglas que relacionan la profundidad y la edad de los depósitos sedimentarios con las velocidades de las ondas sísmicas. Las velocidades de propagación en los depósitos menos profundos son tomadas de las medidas de los estudios geotécnicos. Las velocidades de propagación en roca son tomados de estudios tomográficos.\\
 %
 El modelo de velocidad CVM-S es de libre acceso, un usuario puede obtener los códigos escritos en Fortran, compilarlos y ejecutarlos en una máquina personal. El código se alimenta con un archivo de texto que contiene la latitud, longitud y profundidad de puntos donde se quiere conocer $V_p$, $V_s$ y $\rho$.
 %
@@ -259,7 +261,7 @@ El modelo de velocidad CVM-S es de libre acceso, un usuario puede obtener los c�
 %
 \justifying
 %
-El Modelo de Velocidad Comunitario - Harvard (CVM-H \footnote{\tiny Actualmente se encuentra disponible en linea la versión $11.9.0$ de dicho modelo. \url{http://scec.usc.edu/scecpedia/CVM-H}}, por sus siglas en ingles), se basa en ensayos de reflexión sísmica y ``Borehole" para la estimación de la velocidad de propagación de la onda sísmica en puntos específicos. Dicha información se interpola en una malla bastante refinada cubriendo toda la región que se quiere estudiar. Adicionalmente contiene una descripción extensiva del modelo de velocidad en la región fuera de la costa (offshore).
+El Modelo de Velocidad Comunitario - Harvard (CVM-H \footnote{\tiny Actualmente se encuentra disponible en linea la versión $11\.9\.0$ de dicho modelo. \url{http://scec.usc.edu/scecpedia/CVM-H}}, por sus siglas en ingles), se basa en ensayos de reflexión sísmica y ``Borehole" para la estimación de la velocidad de propagación de la onda sísmica en puntos específicos. Dicha información se interpola en una malla bastante refinada cubriendo toda la región que se quiere estudiar. Adicionalmente contiene una descripción extensiva del modelo de velocidad en la región fuera de la costa (offshore).
 %
 \begin{figure}[h]
 	\centering
@@ -329,15 +331,15 @@ Dentro del proyecto CyberShake, se han simulado diferentes escenarios de ruptura
 %
 \justifying
 %
-Dentro de la región de Los Angeles se tienen identificadas al rededor de $10.000$ fallas que pueden generar sismos de intensidad mayor igual a $6.0$ $(M_w \geq 6.0)$ que pueden afectar la región bajo estudio.
+Dentro de la región de Los Angeles se tienen identificadas al rededor de $10,000$ fallas que pueden generar sismos de intensidad mayor igual a $6\.0$ $(M_w \geq 6\.0)$ que pueden afectar la región bajo estudio.
 %
 \begin{figure}[h]
 	\centering
 	\includegraphics[height=4.5cm]{img/UCERF3_Map.pdf}
-	\caption{Mapa $3D$ de California, mostrando las $10.000$ fallas mapeadas en $UCERF3.0$ \cite[figura 1, página 5]{ucerf3}}
+	\caption{Mapa $3D$ de California, mostrando las $10,000$ fallas mapeadas en $UCERF3\.0$ \cite[figura 1, página 5]{ucerf3}}
 \end{figure}
 %
-A partir de cada falla se generan diferentes escenarios, donde se varían factores tales como la ubicación del hipocentro, magnitud del evento y proceso de ruptura. Dentro de CyberShake se han generado al rededor de $415.000$ escenarios diferentes.\\
+A partir de cada falla se generan diferentes escenarios, donde se varían factores tales como la ubicación del hipocentro, magnitud del evento y proceso de ruptura. Dentro de CyberShake se han generado al rededor de $415,000$ escenarios diferentes.\\
 %
 \begin{figure}[h]
 	\centering
@@ -345,7 +347,7 @@ A partir de cada falla se generan diferentes escenarios, donde se varían factor
 	\caption{Cinemática para diferentes escenarios de ruptura. \cite[figura 4, página 7]{gravesetal}}
 \end{figure}
 %
-Cada escenario diferente representa un modelo computacional diferente, por lo cual sería necesario analizar $415.000$ modelos $3D$ a gran escala con los costos computacionales que esto representa y la cantidad de información que se genera.\\ 
+Cada escenario diferente representa un modelo computacional diferente, por lo cual sería necesario analizar $415,000$ modelos $3D$ a gran escala con los costos computacionales que esto representa y la cantidad de información que se genera.\\ 
 %
 %
 \end{frame}
@@ -518,7 +520,7 @@ La última ecuación es la relación lineal entre el desplazamiento y el Tensor 
 \begin{figure}[h]
 	\centering
 	\includegraphics[height=4cm]{img/Inversion.pdf}
-	\caption{Comparación de los resultados arrojados por la simulación de una ruptura de la falla de San Andrés que genera un sismo de $M_W=7.8$. Rojo: Modelación directa, Negra: Reciprocidad sobre el Tensor de Deformaciones de Green \cite[figura 5, página 7]{gravesetal}}
+	\caption{Comparación de los resultados arrojados por la simulación de una ruptura de la falla de San Andrés que genera un sismo de $M_W=7\.8$. Rojo: Modelación directa, Negra: Reciprocidad sobre el Tensor de Deformaciones de Green \cite[figura 5, página 7]{gravesetal}}
 	\vspace{-.5 cm}
 \end{figure}
 %
@@ -549,7 +551,7 @@ Las curvas de amenaza presentadas, han sido calculadas empleando las GMPE de Boo
 %
 Ambas GMPE utilizan el $V_{s30}$ (velocidad de viaje de las ondas sísmicas en los $30$m superiores) para tener en cuenta los efectos de sitio.\\
 %
-Las curvas de amenaza halladas para los movimientos del suelo encontrados con CyberShake, son calculadas con el software disponible en \url{http://www.opensha.org}, el cual combina la amplitud del movimiento del suelo con las probabilidades de ruptura especificadas en $UCERF2.0$ y $UCERF3.0$.
+Las curvas de amenaza halladas para los movimientos del suelo encontrados con CyberShake, son calculadas con el software disponible en \url{http://www.opensha.org}, el cual combina la amplitud del movimiento del suelo con las probabilidades de ruptura especificadas en $UCERF2\.0$ y $UCERF3\.0$.
 %
 %
 \end{frame}

@@ -13,8 +13,8 @@
 \usepackage[english]{babel}
 %\usepackage[latin1]{inputenc}
 %\usepackage[spanish, activeacute]{babel}
+%\usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
-
 
 %Juan Carlos Vergara Gallego
 %%%%%\documentclass{beamer}
@@ -26,7 +26,6 @@
 \usepackage{ragged2e}  % Allow justification
 \usepackage[margin=20pt,font=small,labelfont=bf,labelsep=period]{caption}
 
-%\decimalpoint
 
 % Templates beamers
 % ***********************************************
@@ -51,6 +50,20 @@
 \usepackage{framed}
 \usepackage{multimedia}
 
+\usepackage{decimal}
+\usefonttheme{serif}  % Make equations to be in serif fonts
+%\decimalpoint
+
+
+\hypersetup{pdfstartview={Fit}, bookmarks=True, pdftitle={SCEC Presentation}, pdfauthor={Juan Carlos Vergara-Gallego}, pdfsubject={Presentation}, pdfkeywords={Waves, Elasticity, Numerical Methods, High Performance Computing, BEM}, pdfpagemode=UseOutlines, bookmarks, bookmarksopen, pdfstartview=FitH, colorlinks,linkcolor=blue, urlcolor=black, citecolor=blue}  % Configure hyperref
+
+%--- New commands ----%
+\newcommand{\footref}[1]{\textsuperscript{\ref{#1}}}
+\newcommand{\pardiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pardiffd}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+
+
+
 
 % Definitions
 % ***********************************************
@@ -58,8 +71,8 @@
 \setlength{\TPHorizModule}{\paperwidth} 
 \setlength{\TPHorizModule}{\paperwidth}\setlength{\TPVertModule}{\paperheight}
 
-%\setbeamercolor{footlinecolor}{bg=grayJuan,fg=blueEAFIT}
-\setbeamercolor{footlinecolor}{bg=yellowEAFIT,fg=blueEAFIT} %Define el color de la banda inferior
+\setbeamercolor{footlinecolor}{bg=grayJuan,fg=blueEAFIT}
+%\setbeamercolor{footlinecolor}{bg=yellowEAFIT,fg=blueEAFIT} %Define el color de la banda inferior
 
 
 % Información que va en la franja inferior
@@ -109,14 +122,14 @@
 \setbeamercolor{block title alerted}{bg=red,fg=black}
 
 \setbeamercolor{section in head/foot}{fg=white, bg=yellowEAFIT} %Modifica el color de la franja superior
-\setbeamercolor{subsection in head/foot}{fg=black, bg=yellowEAFIT} %Modifica el color de la franja superior
+\setbeamercolor{subsection in head/foot}{fg=black, bg=blueEAFIT} %Modifica el color de la segunda franja superior
 %\setbeamercolor{normal text}{fg=blueEAFIT}
 \setbeamercolor{block title}{fg=blueEAFIT}
 \setbeamercolor{section in toc}{fg=blueEAFIT}
 \setbeamercolor{section}{fg=blueEAFIT}
 \setbeamercolor{item}{fg=blueEAFIT} %Determina el color de los circulos cuando se usa el comando item
 %\setbeamercolor{frametitle}{fg=blueEAFIT,bg=grayJuan}
-\setbeamercolor{frametitle}{fg=yellowEAFIT,bg=blueEAFIT}%Esta linea determina el color de la segunda franja superior
+\setbeamercolor{frametitle}{fg=blueEAFIT,bg=grayJuan}%Esta linea determina el color de la tercera franja superior
 \setbeamercolor{framesubetitle}{fg=black}
 \setbeamercolor{title}{fg=blueEAFIT,bg=grayJuan} %Controla el color del título
 \setbeamercolor{titlelike}{bg=blueEAFIT}
