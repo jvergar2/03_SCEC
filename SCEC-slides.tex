@@ -1,15 +1,17 @@
-\documentclass{beamer}
-\usepackage{hyperref}
-\usepackage{subfig}  %% Para incluir subgraficos
-\usepackage{graphicx}
-\usepackage{media9} % 
-\usepackage{url}
-\usepackage{ragged2e}  % Allow justification
-\usepackage[margin=20pt,font=small,labelfont=bf,labelsep=period]{caption}
-
-\usepackage[spanish, activeacute]{babel}
-\usepackage[utf8]{inputenc}
-\decimalpoint
+%%%%%%\documentclass{beamer}
+%%%%%%\usepackage{hyperref}
+%%%%%%\usepackage{subfig}  %% Para incluir subgraficos
+%%%%%%\usepackage{graphicx}
+%%%%%%\usepackage{media9} % 
+%%%%%%\usepackage{url}
+%%%%%%\usepackage{ragged2e}  % Allow justification
+%%%%%%\usepackage[margin=20pt,font=small,labelfont=bf,labelsep=period]{caption}
+%%%%%%
+%%%%%%\usepackage[spanish, activeacute]{babel}
+%%%%%%\usepackage[utf8]{inputenc}
+%\pdfminorversion=5 % To enforce 1.5 version of PDF
+\input{plantilla}
+%%%%%%\decimalpoint
 %\usepackage{natbib}
 
 %
@@ -24,32 +26,75 @@
 %\usefonttheme[onlymath]{serif}  % Make equations to be in serif fonts
 \usefonttheme{serif}  % Make equations to be in serif fonts
 
-\begin{document}
-
-
 %title
+
+
+% TITLE PAGE PARAMETERS
+%\title{Title}
+%\subtitle{~}
+%\institute{Institute}
+%\author[AUTHOR]{\scriptsize{John Doe$^1$\\Maria Chucena$^2$}\\
+%\tiny{$^1$ Doe Industries\\ $^2$ Chucena Inc.}}
+
+\date{\today}
+
+
 \title[CyberShake] % (optional, only for long titles)
-{A Physics-Based Seismic Hazard Model for Southern California}
-\subtitle{CyberShake, Southern California Earthquake Center}
-\author[Vergara Gallego, Juan Carlos] % (optional, for multiple authors)
-{Juan Carlos Vergara Gallego\\ \texttt{\small jvergar2@eafit.edu.co}\\
+{\justifying CyberShake: A Physics-Based Seismic Hazard Model for Southern California}
+%\subtitle{CyberShake, Southern California Earthquake Center}
+\author[Vergara, Juan Carlos] % (optional, for multiple authors)
+{Juan Carlos Vergara\\ \texttt{\small jvergar2@eafit.edu.co}\\
 {\tiny Presentación disponible en: \url{https://github.com/jvergar2/03_SCEC}}}
 \institute{Departamento de Ingeniería Civil\\
   Universidad EAFIT}
 \date{\today}
 \subject{Ingeniería Sísmica}
 
-% Title page
-\frame{\titlepage}
+\begin{document}
 
+
+% Title page
+\begin{frame}[plain]
+ \titlepage
+\end{frame}
 % Outline
+%\begin{frame}[allowframebreaks]
+%	\frametitle{Contenido}
+%	\tableofcontents
+%\end{frame}
+% OVERVIEW
 \begin{frame}[allowframebreaks]
-	\frametitle{Contenido}
-	\tableofcontents
+\frametitle{\large{Contenido}}
+\begin{enumerate}
+\item Introducción
+\item Objetivos
+\item ¿Qué hacen actualmente?
+\item ¿Con qué información cuenta?
+	\begin{enumerate}
+		\item UCERF 2.0 y 3.0
+		\item Modelos de Velocidad
+	\end{enumerate}
+\item ¿Qué hacen y como lo hacen?
+	\begin{enumerate}
+		\item Modelos computacionales
+		\item Procesos Ergódicos
+		\item Discretización región de estudio
+		\item Funciones de Green
+		\item Reciprocidad
+		\item Tensores de Deformación de Green
+	\end{enumerate}
+\item Mapas de Amenaza Sísmica
+	\begin{enumerate}
+		\item Curvas de amenaza
+		\item Mapas de Amenaza
+	\end{enumerate}
+\item Conclusiones
+\item Referencias
+\end{enumerate}
 \end{frame}
 %
 %
-\section{Introducción}
+%\section{Introducción}
 \begin{frame}
 \frametitle{Introducción}
 %
@@ -75,8 +120,9 @@ Se presenta un resumen del proyecto {C}yber{S}hake, de sus objetivos y la foma c
 %\frametitle{¿Qué es el CyberShake?}
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=5.5cm]{img/CyberShake_2009.pdf}
+	\includegraphics[height=4.5cm]{img/CyberShake_2009.pdf}
 	\caption{Mapa de amenaza sísmica del Sur de California calculado con CyberShake. \footnote{\tiny \url{http://scec.usc.edu/scecwiki/images/6/61/CandB_2008.PNG}}}
+	\vspace{-.5 cm}
 \end{figure} 
 %
 %\end{frame}
@@ -87,7 +133,7 @@ Se presenta un resumen del proyecto {C}yber{S}hake, de sus objetivos y la foma c
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=5.5cm]{img/CandB_2008.pdf}
+	\includegraphics[height=4.5cm]{img/CandB_2008.pdf}
 	\caption{Mapa de amenaza sísmica del Sur de California calculado con las ecuaciones de predición del movimiento del suelo (GMPE). \footnote{\tiny \url{http://scec.usc.edu/scecwiki/images/6/61/CandB_2008.PNG}\\}}
 	\vspace{-.5 cm}
 \end{figure}
@@ -96,8 +142,8 @@ Se presenta un resumen del proyecto {C}yber{S}hake, de sus objetivos y la foma c
 \end{frame}
 %
 %
-\section{Objetivos}
-\subsection{Objetivos}
+%\section{Objetivos}
+%\subsection{Objetivos}
 \begin{frame}%[allowframebreaks]
 \frametitle{Objetivos}
 %
@@ -113,7 +159,7 @@ Definir un marco para aplicar la metodología usada en CyberShake en cualquier r
 \end{frame}
 %
 %
-\section{¿Qué se hace actualmente?}
+%\section{¿Qué se hace actualmente?}
 \begin{frame}[allowframebreaks]\frametitle{Leyes de Atenuación}
 %
 \justifying
@@ -135,10 +181,10 @@ A pesar de que las cuatro leyes de atenuación son aceptadas en la comunidad cie
 \end{frame}
 %
 %
-\section{¿Con que información cuentan?}
-\subsection{UCERF $2.0$ y $3.0$}
+%\section{¿Con que información cuentan?}
+%\subsection{UCERF $2.0$ y $3.0$}
 \begin{frame}[allowframebreaks]
-\frametitle{Uniform California Earthquake Rupture Forecast, Version $2.0$ y $3.0$ (UCERF $2.0$ y $3.0$)}
+\frametitle{Uniform California Earthquake Rupture Forecast, Version $2.0$ y $3.0$}
 %
 \justifying
 %
@@ -180,28 +226,29 @@ En total se generan al rededor de $415.000$ escenarios de ruptura para cada siti
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=6cm]{img/UCERF3_Map.pdf}
+	\includegraphics[height=5cm]{img/UCERF3_Map.pdf}
 	\caption{Mapa $3D$ de California, mostrando las $2606$ fallas mapeadas en $UCERF3.0$ \cite[figura 1, página 5]{ucerf3}}
 \end{figure}
 %
 \end{frame}
 %
 %
-\subsection{Modelos de Velocidad}
+%\subsection{Modelos de Velocidad}
 \begin{frame}[allowframebreaks]
 \frametitle{SCEC Community Velocity Model: CVM-S.}
 %
 \justifying
 %
-El modelo de velocidad comunitario de California (CVM-S \footnote{Actualmente se encuentra disponible en linea la versión $4.0$ de dicho modelo. \url{http://www.data.scec.org/research-tools/3d-velocity.html}, \url{http://scec.usc.edu/scecpedia/CVM-S}, último acceso $03$ de Octubre de $2014$.}, por sus siglas en ingles), tiene como propósito servir como modelo de referencia en varias áreas de investigación que dependen de las estrucutras, propiedades de los materiales tales como la velocidad de propagación de las ondas sísmicas, en profundidad para llevar acabo diferentes análisis. Las velocidades de mayor profundidad se construye con base reglas que relacionan la profundidad y la edad de los depósitos sedimentarios con las velocidades de las ondas sísmicas. Las velocidades de propagación en los depósitos menos profundos son tomadas de las medidas de los estudios geotécnicos. Las velocidades de propagación en roca son tomados de estudios tomográficos.\\
+El modelo de velocidad comunitario de California (CVM-S \footnote{ \tiny Actualmente se encuentra disponible en linea la versión $4.0$ de dicho modelo. \url{http://www.data.scec.org/research-tools/3d-velocity.html}, \url{http://scec.usc.edu/scecpedia/CVM-S}, último acceso $03$ de Octubre de $2014$.}, por sus siglas en ingles), tiene como propósito servir como modelo de referencia en varias áreas de investigación que dependen de las estrucutras, propiedades de los materiales tales como la velocidad de propagación de las ondas sísmicas, en profundidad para llevar acabo diferentes análisis. Las velocidades de mayor profundidad se construye con base reglas que relacionan la profundidad y la edad de los depósitos sedimentarios con las velocidades de las ondas sísmicas. Las velocidades de propagación en los depósitos menos profundos son tomadas de las medidas de los estudios geotécnicos. Las velocidades de propagación en roca son tomados de estudios tomográficos.\\
 %
 El modelo de velocidad CVM-S es de libre acceso, un usuario puede obtener los códigos escritos en Fortran, compilarlos y ejecutarlos en una máquina personal. El código se alimenta con un archivo de texto que contiene la latitud, longitud y profundidad de puntos donde se quiere conocer $V_p$, $V_s$ y $\rho$.
 %
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=5cm]{img/CVM-S4.pdf}
+	\includegraphics[height=4.5cm]{img/CVM-S4.pdf}
 	\caption{Secciones transversales de California mostrando la variación en profundidad de la velocidad. \footnote{\tiny \url{http://scec.usc.edu/scecwiki/images/a/a7/CVM-S4.png}\\}}
+	\vspace{-.5 cm}
 \end{figure}
 %
 \end{frame}
@@ -216,16 +263,17 @@ El Modelo de Velocidad Comunitario - Harvard (CVM-H \footnote{\tiny Actualmente 
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=5cm]{img/CVM64_perspectve.pdf}
+	\includegraphics[height=4.5cm]{img/CVM64_perspectve.pdf}
 	\caption{Perspectiva Modelo de Velocidad Comunitario - Harvard (CVM-H). \footnote{\tiny\url{http://scec.usc.edu/scecwiki/images/a/a1/CVM64_perspectve.png}\\}}
+	\vspace{-.5 cm}
 \end{figure}
 %
 %
 \end{frame}
 %
 %
-\section{¿Qué hacen y cómo lo hacen?}
-\subsection{Modelos Computacionales}
+%\section{¿Qué hacen y cómo lo hacen?}
+%\subsection{Modelos Computacionales}
 \begin{frame}%[allowframebreaks]
 \frametitle{Modelos computacionales}
 %
@@ -235,12 +283,12 @@ En un sitio particular, es necesario conocer la incidencia de varios eventos sí
 %
 Teniendo los modelos computacionales a gran escala, es posible generar cuantos eventos sísmicos sean necesarios y tener en cuenta la generación de sismos desde varios tipos de fuentes, tener en cuenta la incidencia de los factores tales como la ruta de propagación de las ondas, los efectos de fuente y sismos de diferentes magnitudes generados por una misma fuente.\\
 %
-En un sitio particular, CyberShake directamente muestrea la variabilidad del movimiento del suelo a partir de información de varios sismos (escenarios de ruptura) y elimina la necesidad de asumir que los procesos son ergódicos.\\
+En un sitio particular, CyberShake directamente muestrea la variabilidad del movimiento del suelo a partir de información de varios sismos (escenarios de ruptura) y elimina la necesidad de asumir que los procesos son ergódicos.
 %
 \end{frame}
 %
 %
-\subsection{Procesos Ergódicos}
+%\subsection{Procesos Ergódicos}
 \begin{frame}%[allowframebreaks]
 \frametitle{Procesos Ergódicos}
 %
@@ -248,8 +296,9 @@ En un sitio particular, CyberShake directamente muestrea la variabilidad del mov
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=3.5cm]{img/Ergodico.pdf}
+	\includegraphics[height=3cm]{img/Ergodico.pdf}
 	\caption{Definición gráfica de un proceso Ergódico. Imagen tomada de \footnote{\tiny \url{http://www.iga.cu/publicaciones/revista/cte_07/art_07-01/id28.htm}\\}}
+	\vspace{-.5 cm}
 \end{figure}
 %
 \textbf{Proceso Ergódico:} Los promedios o medias hacia la derecha son iguales hacia abajo. Es lo mismo hallar los indicadores de un acelerograma que de varios.\\
@@ -257,14 +306,14 @@ En un sitio particular, CyberShake directamente muestrea la variabilidad del mov
 \end{frame}
 %
 %
-\subsection{Discretización región de estudio}
-\begin{frame}%[allowframebreaks]
+%\subsection{Discretización región de estudio}
+\begin{frame}[allowframebreaks]
 \frametitle{Discretización de la región de estudio}
 %
 \justifying
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=4cm]{img/Discretizacion.pdf}
+	\includegraphics[height=4.5cm]{img/Discretizacion.pdf}
 	\caption{Mapa del Sur de California mostrando los puntos en los cuales se calculan las curvas de amenaza. \cite[figura 1, página 3]{gravesetal}}
 	\vspace{-.5 cm}
 \end{figure}
@@ -284,7 +333,7 @@ Dentro de la región de Los Angeles se tienen identificadas al rededor de $10.00
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=4cm]{img/UCERF3_Map.pdf}
+	\includegraphics[height=4.5cm]{img/UCERF3_Map.pdf}
 	\caption{Mapa $3D$ de California, mostrando las $10.000$ fallas mapeadas en $UCERF3.0$ \cite[figura 1, página 5]{ucerf3}}
 \end{figure}
 %
@@ -292,7 +341,7 @@ A partir de cada falla se generan diferentes escenarios, donde se varían factor
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=4cm]{img/ModeloRuptura.pdf}
+	\includegraphics[height=4.5cm]{img/ModeloRuptura.pdf}
 	\caption{Cinemática para diferentes escenarios de ruptura. \cite[figura 4, página 7]{gravesetal}}
 \end{figure}
 %
@@ -302,7 +351,7 @@ Cada escenario diferente representa un modelo computacional diferente, por lo cu
 \end{frame}
 %
 %
-\subsection{Funciones de Green}
+%\subsection{Funciones de Green}
 \begin{frame}[allowframebreaks]
 \frametitle{Funciones de Green en Elastodinámica}
 %
@@ -339,7 +388,7 @@ Donde:
 \end{frame}
 %
 %
-\subsection{Reciprocidad}
+%\subsection{Reciprocidad}
 \begin{frame}[allowframebreaks]
 \frametitle{Reciprocidad en Elastodinámica}
 %
@@ -350,11 +399,12 @@ Sobre un punto $\vec{\xi}_1$ de un medio continuo actúa una carga $\vec{f}_m$ e
 \begin{figure}[h]
 \centering
 %
-	\subfloat[Carga 1]{\includegraphics[width=0.4\textwidth]{img/Recipro1.pdf}}
+	\subfloat[Carga 1]{\includegraphics[width=0.35\textwidth]{img/Recipro1.pdf}}
 	%
-	\subfloat[Carga 2]{\includegraphics[width=0.4\textwidth]{img/Recipro2.pdf}}
+	\subfloat[Carga 2]{\includegraphics[width=0.35\textwidth]{img/Recipro2.pdf}}
 	%
 	\caption{Reciprocidad}
+	\vspace{-.5 cm}
 %
 \end{figure}
 %
@@ -374,7 +424,7 @@ Donde las ecuaciones anteriores representan la reciprocidad espacial y espacio-t
 \end{frame}
 %
 %
-\subsection{Tensores de Deformación de Green}
+%\subsection{Tensores de Deformación de Green}
 \begin{frame}[allowframebreaks]
 \frametitle{¿Cómo se calculan las SGT?}
 %
@@ -384,7 +434,7 @@ CyberShake discretiza la región de estudio en $250$ sitios en los cuales se qui
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=4cm]{img/Discretizacion.pdf}
+	\includegraphics[height=3cm]{img/Discretizacion.pdf}
 	\caption{Mapa del Sur de California mostrando los puntos en los cuales se calculan los registros sintéticos. \cite[figura 1, página 3]{gravesetal}}
 	\vspace{-.5 cm}
 \end{figure}
@@ -392,7 +442,7 @@ CyberShake discretiza la región de estudio en $250$ sitios en los cuales se qui
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=4cm]{img/SGT.pdf}
+	\includegraphics[height=4.5cm]{img/SGT.pdf}
 	\caption{Cálculo de la funciones de Green}
 	\vspace{-.5 cm}
 \end{figure}
@@ -481,21 +531,21 @@ Trabajando con un Software de Elementos Finitos, es posible calcular directament
 \end{frame}
 %
 %
-\section{Mapas de Amenaza Sísmica}
-\subsection{Curvas de Amenaza}
+%\section{Mapas de Amenaza Sísmica}
+%\subsection{Curvas de Amenaza}
 \begin{frame}[allowframebreaks]
 \frametitle{Curvas de Amenaza}
 %
-\justifying
+Las curvas de amenaza presentadas, han sido calculadas empleando las GMPE de Boore y Atkinson (2008), Campbell y Bozorgnia (2009) y con la plataforma CyberShake.
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=6.5cm]{img/CurvasAmenaza.pdf}
+	\includegraphics[height=5cm]{img/CurvasAmenaza.pdf}
 	\caption{Curvas de Amenaza calculadas con dos leyes de atenuación y CyberShake \cite[figura 7, página 10]{gravesetal}}
 	\vspace{-.5 cm}
 \end{figure}
 %
-Las curvas de amenaza presentadas, han sido calculadas empleando las GMPE de Boore y Atkinson (2008), Campbell y Bozorgnia (2009) y con la plataforma CyberShake.\\
+\justifying
 %
 Ambas GMPE utilizan el $V_{s30}$ (velocidad de viaje de las ondas sísmicas en los $30$m superiores) para tener en cuenta los efectos de sitio.\\
 %
@@ -505,7 +555,7 @@ Las curvas de amenaza halladas para los movimientos del suelo encontrados con Cy
 \end{frame}
 %
 %
-\subsection{Mapas de Amenaza}
+%\subsection{Mapas de Amenaza}
 \begin{frame}[allowframebreaks]
 \frametitle{Mapas de Amenaza}
 %
@@ -529,14 +579,14 @@ Por último, para generar los mapas de amenaza sísmica con CyberShake, se lleva
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=6.5cm]{img/ProcesoMapaAmenaza.pdf}
+	\includegraphics[height=5cm]{img/ProcesoMapaAmenaza.pdf}
 	\caption{Procedimeinto calculo mapas de amenaza con CyberShake \cite[figura 9, página 12]{gravesetal}}
 	\vspace{-.5 cm}
 \end{figure}
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=6.5cm]{img/MapaAmenaza.pdf}
+	\includegraphics[height=5cm]{img/MapaAmenaza.pdf}
 	\caption{Mapas de Amenaza con CyberShake construido con $4$ Leyes de Atenuación Diferentes \footnote{\tiny \url{http://scec.usc.edu/scecwiki/images/a/ad/UCERF2_WaveProp_2009.PNG}}}
 	\vspace{-.5 cm}
 \end{figure}
@@ -545,7 +595,7 @@ Por último, para generar los mapas de amenaza sísmica con CyberShake, se lleva
 \end{frame}
 %
 %
-\section{Conclusiones}
+%\section{Conclusiones}
 \begin{frame}[allowframebreaks]
 \frametitle{Conclusiones}
 %
