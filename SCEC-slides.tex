@@ -199,9 +199,9 @@ Cuantro componentes básicos de $UCERF3\.0$:
 	%
 		\item Modelo de Falla: Geometría física de las fallas conocidas.
 		%
-		\item Modelo de Deformación: ``Taza de deslizamiento" de cada sección de la falla. Con esto se calcula el momento sísmico.
+		\item Modelo de Deformación: ``Tasa de deslizamiento" de cada sección de la falla. Con esto se calcula el momento sísmico.
 		%
-		\item ``Earthquake Rate Model": Taza de todos los sismos dentro de una región sobre una magnitud mínima especificada.
+		\item ``Earthquake Rate Model": Tasa de todos los sismos dentro de una región sobre una magnitud mínima especificada.
 		%
 		\item Modelos de Probabilidad: Determina la probabilidad de ocurrencia de cada evento dentro de una ventana de tiempo.
 	%
@@ -363,8 +363,8 @@ Cada escenario diferente representa un modelo computacional diferente, por lo cu
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=4cm]{img/Figure1.pdf}
-	\caption{Nomenclatura Función de Green. \cite[figura 9.1, página 280]{book:pujol}}
+	\includegraphics[height=4.5cm]{img/Figure1.pdf}
+	\caption{Nomenclatura Función de Green.}
 	\vspace{-.5 cm}
 \end{figure}
 %
@@ -398,16 +398,23 @@ Donde:
 %
 Sobre un punto $\vec{\xi}_1$ de un medio continuo actúa una carga $\vec{f}_m$ en dirección $\hat{m}$ y sobre un punto $\vec{\xi}_2$ actúa una carga $\vec{g}_n$ en dirección $\hat{n}$.
 %
-\begin{figure}[h]
-\centering
+%\begin{figure}[h]
+%\centering
+%%
+%	\subfloat[Carga 1]{\includegraphics[width=0.35\textwidth]{img/Recipro1.pdf}}
+%	%
+%	\subfloat[Carga 2]{\includegraphics[width=0.35\textwidth]{img/Recipro2.pdf}}
+%	%
+%	\caption{Reciprocidad}
+%	\vspace{-.5 cm}
+%%
+%\end{figure}
 %
-	\subfloat[Carga 1]{\includegraphics[width=0.35\textwidth]{img/Recipro1.pdf}}
-	%
-	\subfloat[Carga 2]{\includegraphics[width=0.35\textwidth]{img/Recipro2.pdf}}
-	%
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=4cm]{img/Reciprocity.pdf}
 	\caption{Reciprocidad}
 	\vspace{-.5 cm}
-%
 \end{figure}
 %
 Si $\vec{f}_m$ y $\vec{g}_m$ son fuerzas unitarias, se puede afirmar que:\\
@@ -444,7 +451,7 @@ CyberShake discretiza la región de estudio en $250$ sitios en los cuales se qui
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=4.5cm]{img/SGT.pdf}
+	\includegraphics[height=6cm]{img/SGT.pdf}
 	\caption{Cálculo de la funciones de Green}
 	\vspace{-.5 cm}
 \end{figure}
@@ -581,7 +588,7 @@ Por último, para generar los mapas de amenaza sísmica con CyberShake, se lleva
 %
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=5cm]{img/ProcesoMapaAmenaza.pdf}
+	\includegraphics[height=5.5cm]{img/ProcesoMapaAmenaza.pdf}
 	\caption{Procedimeinto calculo mapas de amenaza con CyberShake \cite[figura 9, página 12]{gravesetal}}
 	\vspace{-.5 cm}
 \end{figure}
